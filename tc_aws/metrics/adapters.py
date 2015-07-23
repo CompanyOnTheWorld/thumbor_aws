@@ -21,8 +21,6 @@ class ThumborLibratoMetrics:
 
     def timing(self, metricname, value, unit='ms'):
         name = self._prefixed_name(metricname)
-        print name
-        print value
         self.queue.add(name, value, display_units_short=unit)
 
     def _prefixed_name(self, metricname):
