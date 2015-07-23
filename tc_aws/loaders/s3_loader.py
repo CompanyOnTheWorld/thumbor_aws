@@ -8,8 +8,6 @@ import urllib2
 import tc_aws.connection
 import thumbor.loaders.http_loader as http_loader
 
-import datetime
-
 def _get_bucket(url):
     """
     Returns a tuple containing bucket name and bucket path.
