@@ -37,17 +37,6 @@ def _validate_bucket(context, bucket):
 
 @return_future
 def load(context, url, callback):
-    start = datetime.datetime.now()
-    def wrapper(*args, **kwargs):
-        finish = datetime.datetime.now()
-        took = (finish - start).total_seconds() * 1000
-        print "took %s" % took
-        return callback(*args, **kwargs)
-
-    data_load(context, url, wrapper)
-
-
-def data_load(context, url, callback):
     enable_http_loader = context.config.get('AWS_ENABLE_HTTP_LOADER', default=False)
 
     if enable_http_loader and url.startswith('http'):
